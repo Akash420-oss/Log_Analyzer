@@ -38,3 +38,51 @@ This tool can be used in:
 ---
 
 ## 📂 Project Structure
+Log_Analyzer_Project/
+│
+├── access.log
+├── log_analyzer.py
+└── security_report.txt
+
+
+---
+
+## 🛠️ Technologies Used
+- Python 3
+- File Handling
+- Dictionaries
+- Sorting & Data Analysis
+
+---
+
+## 📌 How It Works
+The program reads each log entry, extracts:
+- IP address
+- Request method (GET/POST)
+- Requested URL
+- Status code (200, 403, 404, 500)
+
+Then it performs frequency analysis to detect suspicious patterns.
+
+---
+
+## 🚨 Detection Rules Used
+### 🔥 Brute Force Detection
+If an IP has more than **5 occurrences of status code 403**, it is flagged as brute force attempt.
+
+### 🔥 Scanning Detection
+If an IP has more than **5 occurrences of status code 404**, it is flagged as scanning activity.
+
+### 🔥 High Traffic Detection
+If an IP makes more than **20 total requests**, it is flagged as possible bot/DDoS traffic.
+
+---
+
+## ▶️ How to Run
+### Step 1: Update file paths inside the code
+Edit in `log_analyzer.py`:
+
+```python
+file_path = "D:\\My Projects\\Log-Analyazer\\access.log"
+report_path = "D:\\My Projects\\Log-Analyazer\\security_report.txt"
+
